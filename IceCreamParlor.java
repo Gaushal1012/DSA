@@ -24,20 +24,28 @@ public class IceCreamParlor {
             ArrayList<Integer> list = new ArrayList<>();
             int temp = 0;
 
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = 0; j < arr.length - 1; j++) {
                 temp = arr[j];
                 for (int j2 = j + 1; j2 < arr.length; j2++) {
+                    int x = temp;
                     temp = temp + arr[j2];
                     if (temp == m) {
                         list.add(j + 1);
                         list.add(j2 + 1);
+                        break;
                     }
+                    temp = x;
                 }
+                temp = 0;
             }
+
+            // System.out.println(temp);
+            // System.out.println(m);
 
             for (int k = 0; k < list.size(); k++) {
                 System.out.print(list.get(k) + " ");
             }
+            System.out.println();
         }
     }
 }
